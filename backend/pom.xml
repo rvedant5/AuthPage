@@ -9,10 +9,10 @@
         <relativePath/>
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>auth</artifactId>
+    <artifactId>authpage</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>auth</name>
-    <description>Authentication service for PLoginSignup3D</description>
+    <name>authpage</name>
+    <description>Authentication service for AuthPage with 3D flip animation</description>
     <properties>
         <java.version>17</java.version>
     </properties>
@@ -30,6 +30,14 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.33</version>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

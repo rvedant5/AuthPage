@@ -1,6 +1,8 @@
 package com.example.auth.controller;
 
-import com.example.auth.entity.User;
+import com.example.auth.dto.LoginRequest;
+import com.example.auth.dto.SignupRequest;
+import com.example.auth.dto.UserResponse;
 import com.example.auth.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,13 +20,13 @@ public class AuthController {
     private AuthService authService;
     
     @PostMapping("/signup")
-    public ResponseEntity<?> signup(@RequestBody User user) {
+    public ResponseEntity<?> signup(@RequestBody SignupRequest signupRequest) {
         try {
-            User savedUser = authService.signup(user);
+            UserResponse userResponse = authService.signup(signupRequest);
             Map<String, Object> response = new HashMap<>();
             response.put("success", true);
             response.put("message", "User registered successfully");
-            response.put("user", savedUser);
+            response.put("user", userResponse);
             return ResponseEntity.ok(response);
         } catch (RuntimeException e) {
             Map<String, Object> response = new HashMap<>();
@@ -35,16 +37,13 @@ public class AuthController {
     }
     
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody Map<String, String> loginRequest) {
+    public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
         try {
-            String email = loginRequest.get("email");
-            String password = loginRequest.get("password");
-            
-            User user = authService.login(email, password);
+            UserResponse userResponse = authService.login(loginRequest);
             Map<String, Object> response = new HashMap<>();
             response.put("success", true);
             response.put("message", "Login successful");
-            response.put("user", user);
+            response.put("user", userResponse);
             return ResponseEntity.ok(response);
         } catch (RuntimeException e) {
             Map<String, Object> response = new HashMap<>();

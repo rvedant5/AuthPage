@@ -1,4 +1,4 @@
--- PLoginSignup3D Database Setup
+-- AuthPage Database Setup
 -- Run this script in your MySQL client
 
 -- Create the database
