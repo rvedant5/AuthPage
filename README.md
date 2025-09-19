@@ -1,4 +1,4 @@
-# PLoginSignup3D
+# AuthPage
 
 A full-stack authentication application with 3D flip animation for switching between login and signup forms.
 
