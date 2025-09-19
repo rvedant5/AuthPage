@@ -1,4 +1,5 @@
 # AuthPage
+# AuthPage
 
 A modern full-stack authentication application featuring a stunning 3D flip animation for seamless switching between login and signup forms. Built with Spring Boot backend and React frontend.
 
